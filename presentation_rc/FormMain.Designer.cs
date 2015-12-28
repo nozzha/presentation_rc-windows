@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.wifiRB = new MaterialSkin.Controls.MaterialRadioButton();
             this.bluetoothRB = new MaterialSkin.Controls.MaterialRadioButton();
@@ -38,12 +39,15 @@
             this.serverStatusLabel = new System.Windows.Forms.Label();
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
             this.deviceStatusLabel = new System.Windows.Forms.Label();
-            this.settingsBtn = new MaterialSkin.Controls.MaterialFlatButton();
             this.materialDivider3 = new MaterialSkin.Controls.MaterialDivider();
             this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
             this.IPAddressLabel = new System.Windows.Forms.Label();
             this.PortLabel = new System.Windows.Forms.Label();
             this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.androidAppBtn = new MaterialSkin.Controls.MaterialFlatButton();
+            this.aboutBtn = new MaterialSkin.Controls.MaterialFlatButton();
+            this.settingsBtn = new MaterialSkin.Controls.MaterialFlatButton();
             this.SuspendLayout();
             // 
             // wifiRB
@@ -80,6 +84,7 @@
             this.bluetoothRB.TabIndex = 2;
             this.bluetoothRB.Text = "Bluetooth";
             this.bluetoothRB.UseVisualStyleBackColor = true;
+            this.bluetoothRB.Visible = false;
             this.bluetoothRB.CheckedChanged += new System.EventHandler(this.bluetoothRB_CheckedChanged);
             // 
             // materialLabel1
@@ -166,22 +171,6 @@
             this.deviceStatusLabel.TabIndex = 8;
             this.deviceStatusLabel.Text = "Not connected";
             // 
-            // settingsBtn
-            // 
-            this.settingsBtn.AutoSize = true;
-            this.settingsBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.settingsBtn.Depth = 0;
-            this.settingsBtn.Location = new System.Drawing.Point(10, 300);
-            this.settingsBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.settingsBtn.MouseState = MaterialSkin.MouseState.HOVER;
-            this.settingsBtn.Name = "settingsBtn";
-            this.settingsBtn.Primary = false;
-            this.settingsBtn.Size = new System.Drawing.Size(76, 36);
-            this.settingsBtn.TabIndex = 9;
-            this.settingsBtn.Text = "Settings";
-            this.settingsBtn.UseVisualStyleBackColor = true;
-            this.settingsBtn.Click += new System.EventHandler(this.settingsBtn_Click);
-            // 
             // materialDivider3
             // 
             this.materialDivider3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -239,11 +228,64 @@
             this.materialLabel5.TabIndex = 13;
             this.materialLabel5.Text = "Port";
             // 
+            // androidAppBtn
+            // 
+            this.androidAppBtn.AutoSize = true;
+            this.androidAppBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.androidAppBtn.Depth = 0;
+            this.androidAppBtn.Icon = global::NozzhaPRC.Properties.Resources.ic_android_black_24dp_1x;
+            this.androidAppBtn.Location = new System.Drawing.Point(54, 300);
+            this.androidAppBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.androidAppBtn.MouseState = MaterialSkin.MouseState.HOVER;
+            this.androidAppBtn.Name = "androidAppBtn";
+            this.androidAppBtn.Primary = false;
+            this.androidAppBtn.Size = new System.Drawing.Size(36, 36);
+            this.androidAppBtn.TabIndex = 16;
+            this.toolTip1.SetToolTip(this.androidAppBtn, "Android Application");
+            this.androidAppBtn.UseVisualStyleBackColor = true;
+            this.androidAppBtn.Click += new System.EventHandler(this.androidAppBtn_Click);
+            // 
+            // aboutBtn
+            // 
+            this.aboutBtn.AutoSize = true;
+            this.aboutBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.aboutBtn.Depth = 0;
+            this.aboutBtn.Icon = global::NozzhaPRC.Properties.Resources.ic_info_black_24dp_1x;
+            this.aboutBtn.Location = new System.Drawing.Point(10, 300);
+            this.aboutBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.aboutBtn.MouseState = MaterialSkin.MouseState.HOVER;
+            this.aboutBtn.Name = "aboutBtn";
+            this.aboutBtn.Primary = false;
+            this.aboutBtn.Size = new System.Drawing.Size(36, 36);
+            this.aboutBtn.TabIndex = 15;
+            this.toolTip1.SetToolTip(this.aboutBtn, "About");
+            this.aboutBtn.UseVisualStyleBackColor = true;
+            this.aboutBtn.Click += new System.EventHandler(this.aboutBtn_Click);
+            // 
+            // settingsBtn
+            // 
+            this.settingsBtn.AutoSize = true;
+            this.settingsBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.settingsBtn.Depth = 0;
+            this.settingsBtn.Icon = global::NozzhaPRC.Properties.Resources.ic_settings_black_24dp_1x;
+            this.settingsBtn.Location = new System.Drawing.Point(98, 300);
+            this.settingsBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.settingsBtn.MouseState = MaterialSkin.MouseState.HOVER;
+            this.settingsBtn.Name = "settingsBtn";
+            this.settingsBtn.Primary = false;
+            this.settingsBtn.Size = new System.Drawing.Size(36, 36);
+            this.settingsBtn.TabIndex = 9;
+            this.toolTip1.SetToolTip(this.settingsBtn, "Settings");
+            this.settingsBtn.UseVisualStyleBackColor = true;
+            this.settingsBtn.Click += new System.EventHandler(this.settingsBtn_Click);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(300, 347);
+            this.Controls.Add(this.androidAppBtn);
+            this.Controls.Add(this.aboutBtn);
             this.Controls.Add(this.PortLabel);
             this.Controls.Add(this.materialLabel5);
             this.Controls.Add(this.IPAddressLabel);
@@ -288,6 +330,9 @@
         private System.Windows.Forms.Label IPAddressLabel;
         private System.Windows.Forms.Label PortLabel;
         private MaterialSkin.Controls.MaterialLabel materialLabel5;
+        private MaterialSkin.Controls.MaterialFlatButton aboutBtn;
+        private MaterialSkin.Controls.MaterialFlatButton androidAppBtn;
+        private System.Windows.Forms.ToolTip toolTip1;
 
 
     }

@@ -11,6 +11,27 @@
     <AssemblyName>presentation_rc</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <SupportUrl>http://store.nozzha.com/apps/view/presentation_rc/</SupportUrl>
+    <TargetCulture>en</TargetCulture>
+    <ProductName>Nozzha PRC</ProductName>
+    <PublisherName>Nozzha</PublisherName>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.0</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -34,25 +55,57 @@
   <PropertyGroup>
     <ApplicationIcon>Resources\Icons\ic_nozzha_prc.ico</ApplicationIcon>
   </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>4CF107995790B2F01C9FACC8623DC555FB3E2D72</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>presentation_rc_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="MaterialSkin">
-      <HintPath>..\packages\MaterialSkin.Local.1.0.0\lib\MaterialSkin.dll</HintPath>
+      <HintPath>..\ext-libs\MaterialSkin.dll</HintPath>
     </Reference>
     <Reference Include="System">
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Data" />
     <Reference Include="System.Drawing">
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Windows.Forms">
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Components\ProgressIndicator.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\ProgressIndicator.Designer.cs">
+      <DependentUpon>ProgressIndicator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\RotationType.cs" />
+    <Compile Include="Components\TextDisplayMode.cs" />
+    <Compile Include="Components\TextView.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Core\ClientInfo.cs" />
     <Compile Include="Core\NColor.cs" />
     <Compile Include="Core\Util.cs" />
+    <Compile Include="Core\BuildVars.cs" />
     <Compile Include="Exceptions\ServerStateException.cs" />
+    <Compile Include="FormAbout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAbout.Designer.cs">
+      <DependentUpon>FormAbout.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +128,15 @@
     <Compile Include="Statuses\ClientStatus.cs" />
     <Compile Include="Statuses\Command.cs" />
     <Compile Include="Statuses\ServerStatus.cs" />
+    <Compile Include="FormTutorial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTutorial.Designer.cs">
+      <DependentUpon>FormTutorial.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="FormAbout.resx">
+      <DependentUpon>FormAbout.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -91,6 +153,10 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="FormTutorial.resx">
+      <DependentUpon>FormTutorial.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="presentation_rc_TemporaryKey.pfx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -100,13 +166,39 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Resources\Fonts\Roboto-Medium.ttf" />
+    <None Include="Resources\Fonts\Roboto-Regular.ttf" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\Icons\ic_nozzha_prc.ico" />
+    <Content Include="Resources\Images\google-play-badge.png" />
+    <Content Include="Resources\Images\ic_android_black_24dp_1x.png" />
+    <Content Include="Resources\Images\ic_info_black_24dp_1x.png" />
     <Content Include="Resources\Images\ic_nozzha_prc.png" />
+    <Content Include="Resources\Images\ic_settings_black_24dp_1x.png" />
+    <Content Include="Resources\Images\nozzha_logo.png" />
+    <Content Include="Resources\Images\play_store_static_qr_code_without_logo.jpg" />
+    <Content Include="Resources\Images\windows_firewall_alert.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

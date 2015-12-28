@@ -224,5 +224,18 @@ namespace NozzhaPRC
                 // to move to the previous slide
                 SendKeys.SendWait("{UP}");
         }
+
+
+        private void aboutBtn_Click(object sender, EventArgs e)
+        {
+            FormAbout aboutForm = new FormAbout();
+            aboutForm.ShowDialog();
+        }
+
+        private void androidAppBtn_Click(object sender, EventArgs e)
+        {
+            FormTutorial tutorialForm = new FormTutorial();
+            tutorialForm.ShowDialogOnSlide(1);
+        }
     }
 }

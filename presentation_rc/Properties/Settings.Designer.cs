@@ -58,5 +58,17 @@ namespace NozzhaPRC.Properties {
                 this["bindPort"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int currAppAPI {
+            get {
+                return ((int)(this["currAppAPI"]));
+            }
+            set {
+                this["currAppAPI"] = value;
+            }
+        }
     }
 }
