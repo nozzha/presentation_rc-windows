@@ -11,10 +11,10 @@
     <AssemblyName>presentation_rc</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>publish\</PublishUrl>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <PublishUrl>ftp://nozzha.com/public_html/nozzha-store/downloads/presentation_rc/windows/</PublishUrl>
     <Install>true</Install>
-    <InstallFrom>Disk</InstallFrom>
+    <InstallFrom>Web</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
     <UpdateMode>Foreground</UpdateMode>
     <UpdateInterval>7</UpdateInterval>
@@ -22,6 +22,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
+    <InstallUrl>http://nozzha.com/nozzha-store/downloads/presentation_rc/windows/</InstallUrl>
     <SupportUrl>http://store.nozzha.com/apps/view/presentation_rc/</SupportUrl>
     <TargetCulture>en</TargetCulture>
     <ProductName>Nozzha PRC</ProductName>
